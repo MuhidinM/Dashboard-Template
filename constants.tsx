@@ -1,5 +1,5 @@
 import {
-    Facebook,
+  Facebook,
   Github,
   Globe,
   Instagram,

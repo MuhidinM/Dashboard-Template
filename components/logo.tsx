@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Logo = ({ href, small }: { href: string; small: boolean | null }) => {
+const Logo = ({ href, small }: { href: string; small?: boolean }) => {
   return (
     <div>
       <Link

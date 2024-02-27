@@ -17,17 +17,25 @@ import Logo from "../logo";
 import { User } from "../user";
 import { sideBar } from "@/constants";
 
-export const Navbar = ({ click, small }: { click: any; small: any }) => {
+export const Navbar = ({
+  click,
+  menu,
+  small,
+}: {
+  click: any;
+  menu: any;
+  small: any;
+}) => {
   const path = usePathname();
   return (
     <div>
       <div className="md:hidden flex items-center justify-between my-2 mx-4">
-        <Button variant={"outline"}>
+        <Button variant={"outline"} onClick={menu}>
           <span className="sr-only">Open sidebar</span>
           <AlignJustify />
         </Button>
         <div className="md:hidden">
-          <Logo href="/" small={small ? true : false} />
+          <Logo href="/" />
         </div>
         <div className="md:hidden">
           <ModeToggle />
@@ -40,7 +48,7 @@ export const Navbar = ({ click, small }: { click: any; small: any }) => {
           small && "w-20"
         )}
       >
-        <div className="h-full w-full flex flex-col justify-between px-3 py-4 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+        <div className="h-full w-full flex flex-col justify-between px-3 py-4 bg-secondary dark:bg-gray-800 overflow-hidden">
           <div className="flex flex-col overflow-y-auto">
             <div
               className={cn(
