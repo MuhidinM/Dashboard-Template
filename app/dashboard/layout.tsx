@@ -14,7 +14,7 @@ const HomeLayout = ({ children }: { children: React.ReactNode }) => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <div>
+    <div className="">
       <Navbar click={changeSize} menu={changeMenu} small={small} />
       <div className={cn("p-4 md:ml-64", small && "md:ml-20")}>
         {/* <Breadcrumbs /> */}

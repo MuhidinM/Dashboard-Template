@@ -64,28 +64,29 @@ export const Navbar = ({
                 )}
               >
                 <ModeToggle />
-                <Button size={"icon"} variant="outline" onClick={click}>
+                <Button
+                  size={"icon"}
+                  variant="link"
+                  className="hover:text-gray-500 hover:dark:text-gray-300"
+                  onClick={click}
+                >
                   {small ? <ChevronsRight /> : <ChevronsLeft />}
                 </Button>
               </div>
             </div>
             <div className="flex items-center justify-between mb-2">
-              <ul className="space-y-2 font-medium w-full">
+              <ul className="space-y-2 font-semibold w-full">
                 {sideBar.map(
                   (item) =>
                     !item.hide && ( // Render the list item only if item.hidden is false
-                      <li
-                        key={item.name}
-                        className="rounded-md border border-gray-500"
-                      >
+                      <li key={item.name} className="">
                         <Link
                           href={item.path}
                           className={cn(
-                            "flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 group",
+                            "flex items-center p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 hover:dark:text-gray-300 group",
                             small && "justify-center ",
-                            item.path === path && "text-cyan-600",
-                            item.path !== path &&
-                              "text-gray-500 rounded-lg dark:text-white hover:text-cyan-500 dark:hover:text-cyan-500"
+                            item.path === path &&
+                              "text-blue-400 hover:text-blue-600 dark:text-blue-400 hover:dark:text-blue-500"
                           )}
                         >
                           {item.icon}
@@ -101,21 +102,23 @@ export const Navbar = ({
           </div>
           <div className="items-center justify-between">
             <div className="flex flex-col">
-              <div className="mb-2">
+              <div className="my-2">
                 <ul className="space-y-2 font-medium w-full ">
                   <li>
-                    <Link
-                      href="/setting"
-                      className="flex border border-gray-500 justify-center items-center p-2 text-gray-500 rounded-lg dark:text-white hover:text-cyan-500 dark:hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                    >
-                      <Settings />
-                      <span className={cn("ms-3", small && "hidden")}>
-                        Setting
-                      </span>
-                    </Link>
+                    <Button className="w-full" variant={"secondary"}>
+                      <Link
+                        href="/setting"
+                        className="flex items-center hover:text-gray-600 hover:dark:text-gray-300"
+                      >
+                        <Settings />
+                        <span className={cn("ms-3", small && "hidden")}>
+                          Setting
+                        </span>
+                      </Link>
+                    </Button>
                   </li>
                   <li>
-                    <Button className="text-white bg-red-500 hover:bg-red-600 w-full">
+                    <Button variant={"destructive"} className="w-full">
                       <LogOut />
                       <span className={cn("ms-3", small && "hidden")}>
                         Log out

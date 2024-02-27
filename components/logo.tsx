@@ -8,9 +8,9 @@ const Logo = ({ href, small }: { href: string; small?: boolean }) => {
     <div>
       <Link
         href={href}
-        className={cn("flex items-center w-10", small && "w-8")}
+        className={cn("flex items-center w-10", small && "w-8 justify-center")}
       >
-        <Image
+        {/* <Image
           src="/logo.png"
           className="dark:hidden"
           width={120}
@@ -23,7 +23,8 @@ const Logo = ({ href, small }: { href: string; small?: boolean }) => {
           width={120}
           height={40}
           alt="img"
-        />
+        /> */}
+        <h1 className="font-bold text-2xl">M</h1>
         <span className={cn("font-semibold text-2xl", small && "hidden")}>
           Logo
         </span>
